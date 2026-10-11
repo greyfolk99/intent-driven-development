@@ -57,30 +57,15 @@ Do not ask about incidental choices whose consequences fall within already deleg
 
 ## 4. Interview around judgment, not ceremony
 
-For each consequential unresolved choice, explain in language the user can judge:
+For each consequential unresolved choice, explain in language the user can judge: the likely outcome of the current direction, the meaningful alternatives, each one's advantages, costs, and risks, and your recommendation with its reason. The user decides which judgments to keep; the agent investigates the facts, owns the choices delegated to it, and challenges a proposal when its consequences fight the desired result — as a navigator advises the captain who holds the wheel.
 
-- the likely outcome if the current direction is implemented;
-- the meaningful alternatives;
-- the advantages, costs, and risks of each;
-- the recommended choice and the reason for it.
+**Verify the intent; never run on a guess.** The user often speaks loosely and out of order, so interpreting what they mean is expected — but a reading is confirmed, not acted on silently. Say the organized reading back and check it ("I take this as X — is that the intent?"); it becomes intent only once the user affirms. This is not pedantry or correcting their wording; it is refusing to treat "they probably meant X" as settled. And never manufacture a reason the user did not give, nor append a rule that widens your own discretion — challenge freely, invent nothing.
 
-The user decides which judgments to retain. The agent investigates technical facts, challenges proposals when their implementation consequences conflict with the desired result, and owns the decisions the user delegates.
+**Reach each engineering choice by analysis, not reflex.** First check the facts — verify, do not assert from memory — then weigh the cases and how established work decided the same thing and why, debating whether those reasons fit here. Even a one-sided choice is stated with its basis and offered for a quick confirmation ("I think X because Y — shall I?"), never decided in silence; because several threads run at once, these light confirmations are woven among the other items rather than halting on each. The heavier or more two-sided the trade-off, the more it rises to a full question of its own.
 
-Never invent a reason. The agent may challenge an intent — point out a contradiction, a gap, a better option — but it never records a reason the user did not give, not even hedged as a guess. If the user stated only what or where, that is specification; the reason is asked for and recorded only once given. Do not append your own words to the user's, least of all a rule that widens your own discretion ("I will not ask about things like this") unless the user said it.
+**Respect what the user sets aside.** Intent is hierarchical, and deferral travels down it: put a parent off ("later") and everything under it waits too. Set-aside items live in `DRAFT` — directional material that informs the specification covering them when it is finally written, not a backlog of questions. Pressing `DRAFT` items back into the interview each cycle, before their parent is in scope, is what keeps an interview from ever ending; carry them quietly and raise them only when their parent comes up.
 
-Every engineering choice has trade-offs; reach it by analysis, not reflex. The analysis is, first, a fact check — the first duty is to verify, not to assert from memory — then a weighing of the cases, and a look at how established work decided the same thing and the reasons it did, debating whether those reasons fit this situation. State the basis even when the answer is one-sided and the right move is simply to do it, and still ask — not as a question that blocks, but as a stated decision inviting a quick confirmation ("I think it should be X because Y — shall I?"). Never decide silently because it seems right. Because the interview runs several threads at once rather than one at a time, these light confirmations are woven in among the other items rather than halting on each. The heavier or more two-sided the trade-off, the more it is raised as a full question in its own right.
-
-Verification is mutual and fact-based. The user holds the direction; the agent advises and owns the judgments delegated to it, as a navigator to a captain. Each is the other's adversarial verifier — the agent grounds its own opinions in checked facts, and tests the user's judgments against facts too, doubting whether a user judgment is right and saying so with evidence, because the user cannot easily fact-check. How much of this is possible varies with budget, but fact-grounding in the debate is the point.
-
-Respect what the user has set aside. Because intent forms a hierarchy — directions with sub-decisions beneath them — deferral travels down it: when a parent is put off ("we'll do this later"), everything under it is put off with it. Set-aside items live in `DRAFT`, and `DRAFT` is not a backlog of questions to work through. It is directional material — a record of where something is heading — so that when the specification covering it is eventually written, that direction is drawn on. The failure to avoid is pressing `DRAFT` items back into the interview every cycle, trying to turn them into spec before their parent is in scope; that is what keeps an interview from ever ending. Carry them quietly and raise them only when their parent comes up.
-
-Adapt the interview to the user and the change:
-
-- go deeper when a choice has substantial business, security, safety, data, operational, or future-change consequences;
-- go broader when it affects several actors, workflows, components, services, or external systems;
-- ask less where the user has delegated the choice and the consequences are contained.
-
-Neither a command nor a tentative idea is automatically complete intent. Interpret it in context, project its consequences, and ask only where a missing judgment could materially change the result.
+Adapt the interview: deeper when a choice carries substantial business, security, safety, data, operational, or future-change weight; broader when it touches several actors, workflows, or systems; lighter where the user has delegated it and the consequences are contained. Neither a command nor a tentative idea is automatically complete intent — interpret it in context, project its consequences, and ask only where a missing judgment could change the result.
 
 ## 5. Let discovery and implementation interleave
 
