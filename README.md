@@ -56,9 +56,13 @@ interview (challenge + recommend) → record intent → spec → build → verif
 
 ## Install
 
-Clone the repository into your agent's skills directory (Codex shown):
+It is a plain skill — a `SKILL.md` with a name and description — and barely depends on the harness,
+so it drops into any agent that loads skills. Clone it into that agent's skills directory:
 
 ```sh
+# Claude Code
+git clone https://github.com/greyfolk99/intent-driven-development.git ~/.claude/skills/intent-driven-development
+# Codex
 git clone https://github.com/greyfolk99/intent-driven-development.git ~/.codex/skills/intent-driven-development
 ```
 
