@@ -22,7 +22,9 @@ Record whether the intent is a `seed`, `exploring`, `clarified`, or `dropped`. U
 
 `INTENT.md` describes the current position, not the conversation that produced it. When understanding changes, rewrite the affected Why, What, or Not. Keep only the evidence still needed to understand the current position in Learnings; version history preserves the path.
 
-Do not put architecture, code structure, or a task plan into intent unless it is itself a user-retained constraint. Derive implementation artifacts from intent when they are useful. A long-lived specification is optional: create one when coordination, assurance, or handoff benefits exceed its maintenance cost.
+Intent is the *reason* a thing is to be built the way it is. A decision stated without its reason is specification, not intent: record it in the specification and obtain the reason before writing it as intent. "The input bar is laid out attach · field · send" is specification; "frequently used controls go on the right because the phone is used right-handed" is the intent behind it. Record a decision the moment it is made, dated with its reason, so it is not lost; do not accumulate several unrecorded decisions.
+
+Do not put architecture, code structure, or a task plan into intent unless it is itself a user-retained constraint. Derive implementation artifacts from intent when they are useful. A specification is where "how" lives — each of its lines carries the intent it serves, and a choice the specification makes on its own is marked as a design decision. Create one when coordination, assurance, or handoff benefits exceed its maintenance cost.
 
 ## 2. Reconstruct the intent tree before summarizing
 
@@ -63,6 +65,10 @@ For each consequential unresolved choice, explain in language the user can judge
 - the recommended choice and the reason for it.
 
 The user decides which judgments to retain. The agent investigates technical facts, challenges proposals when their implementation consequences conflict with the desired result, and owns the decisions the user delegates.
+
+Never invent a reason. The agent may challenge an intent — point out a contradiction, a gap, a better option — but it never records a reason the user did not give, not even hedged as a guess. If the user stated only what or where, that is specification; the reason is asked for and recorded only once given. Do not append your own words to the user's, least of all a rule that widens your own discretion ("I will not ask about things like this") unless the user said it.
+
+An obvious choice is neither decided silently nor turned into a question. State it as obvious and proceed — "taking this as obvious and doing X" — so the judgment of what is obvious is visible and the user can override it, rather than hidden in your head.
 
 Adapt the interview to the user and the change:
 
@@ -105,3 +111,7 @@ Tests are evidence for selected behavior, not frozen intent. When a test conflic
 For human review, present a temporary business-level view generated from the current implementation: what actors can do, what state or side effects change, what is deliberately absent, and which claims are verified versus inferred. Do not preserve this report as a competing source of truth unless the user explicitly wants a maintained artifact.
 
 Finish only when the implementation and its supporting artifacts reflect the current intent, automated evidence is proportionate to the risk, and remaining uncertainty is visible to the user.
+
+## 8. Sanitize when the layers drift
+
+Periodically, and after large changes, read down the layers — intent, then specification, then code — for drift: a specification line no reason supports, a leftover of a superseded design, a gap, a path that bypasses a stated rule. Report each with its exact location, and bring it back into line through the interview rather than by quietly editing intent to match the code. Read-only inspection may fan out; writing intent and specification stays with the agent leading the work, and happens one unit at a time with the user's review between.
