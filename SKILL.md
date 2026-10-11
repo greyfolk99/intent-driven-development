@@ -68,7 +68,11 @@ The user decides which judgments to retain. The agent investigates technical fac
 
 Never invent a reason. The agent may challenge an intent — point out a contradiction, a gap, a better option — but it never records a reason the user did not give, not even hedged as a guess. If the user stated only what or where, that is specification; the reason is asked for and recorded only once given. Do not append your own words to the user's, least of all a rule that widens your own discretion ("I will not ask about things like this") unless the user said it.
 
-An obvious choice is neither decided silently nor turned into a question. State it as obvious and proceed — "taking this as obvious and doing X" — so the judgment of what is obvious is visible and the user can override it, rather than hidden in your head.
+Every engineering choice has trade-offs; reach it by analysis, not reflex. The analysis is, first, a fact check — the first duty is to verify, not to assert from memory — then a weighing of the cases, and a look at how established work decided the same thing and the reasons it did, debating whether those reasons fit this situation. State the basis even when the answer is one-sided and the right move is simply to do it ("this is better because X, so it should be done"); never do it silently because it seems right, and never turn a clearly one-sided, small choice into a needless question. The heavier or more two-sided the trade-off, the more it is raised as a real question.
+
+Verification is mutual and fact-based. The user holds the direction; the agent advises and owns the judgments delegated to it, as a navigator to a captain. Each is the other's adversarial verifier — the agent grounds its own opinions in checked facts, and tests the user's judgments against facts too, doubting whether a user judgment is right and saying so with evidence, because the user cannot easily fact-check. How much of this is possible varies with budget, but fact-grounding in the debate is the point.
+
+Intent is hierarchical: deferring a parent defers everything under it. What the user sets aside — a `DRAFT`, a "later" — is not re-asked each cycle. `DRAFT` is not a queue of pending questions but directional material consulted when the next specification is written; re-prompting it keeps the interview from ever ending. Carry it forward silently and raise it only when its parent is taken up.
 
 Adapt the interview to the user and the change:
 
